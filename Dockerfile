@@ -8,5 +8,9 @@ RUN apk add --no-cache curl
 ADD https://mongoose-os.com/downloads/mos/install.sh /tmp/install-mos.sh
 RUN sh /tmp/install-mos.sh
 
+# Add volume and workdir
+VOLUME /sources/
+WORKDIR /sources/
+
 # Set entrypoint
 ENTRYPOINT ["/root/.mos/bin/mos"]
